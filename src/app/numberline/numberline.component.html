@@ -1,0 +1,21 @@
+<svg:g>
+  <svg:line [attr.x1]="0" 
+            [attr.y1]="10" 
+            [attr.x2]="length" 
+            [attr.y2]="10">
+  </svg:line>
+  <svg:line *ngFor="let mark of majorMarks; let ind = index;" 
+            [attr.x1]="mark" 
+            [attr.y1]="5" 
+            [attr.x2]="mark" 
+            [attr.y2]="10"
+            (click) = "clickedOn(mark)">
+  </svg:line>
+  <svg:line *ngFor="let mark of minorMarks; let ind = index;" 
+            [attr.x1]="mark" 
+            [attr.y1]="7.5" 
+            [attr.x2]="mark" 
+            [attr.y2]="10"
+            (click) = "clickedOn(mark)">
+  </svg:line>
+</svg:g>

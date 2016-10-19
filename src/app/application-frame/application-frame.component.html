@@ -1,0 +1,16 @@
+<md-toolbar color="primary">
+  <button 
+    (click)="start.toggle()"
+    md-button >
+    <md-icon >menu</md-icon>
+  </button>
+  <span>Übungen</span>
+  <span class="fill-space"></span>
+</md-toolbar>
+
+<md-sidenav-layout>
+  <md-sidenav mode="over" #start>
+    <ng-content select=".dhb-side-nav-content"></ng-content>
+  </md-sidenav>
+  <ng-content select=".dhb-main-content"></ng-content>
+</md-sidenav-layout>

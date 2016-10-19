@@ -1,0 +1,26 @@
+<div class="table">
+    <dhb-function-set-card 
+            *ngFor = "let f of functions"
+            [f] = "f"
+            (click) = "selectCard(f)"
+            [ngClass]="{
+                selected: f.selected,
+                captured: f.captured
+            }">
+    </dhb-function-set-card>
+</div>
+
+<div class="bar">
+    <div class="selection">
+        <dhb-function-set-card 
+            *ngFor = "let f of selectedCards"
+            [f] = "f"
+            (click) = "selectCard(f)">
+        </dhb-function-set-card>
+    </div>
+    <div>
+        <p class="score">
+            {{capturedCards.length/4}}/{{functions.length/4}}
+        </p>
+    </div>
+</div>

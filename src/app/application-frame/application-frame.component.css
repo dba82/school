@@ -1,0 +1,35 @@
+.fill-space {
+  flex: 1 1 auto;
+}
+button{
+  padding:0;  
+}
+[md-button] *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+md-sidenav{
+    padding-right: 2vw;
+    height: 100vh;
+}
+md-sidenav-content{
+    transition: margin 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+md-sidenav-layout{
+    height: 100vh;
+    padding: 0vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media (max-width: 800px){
+md-sidenav{
+    width: 100vw;
+    padding: 2vw;
+}
+}

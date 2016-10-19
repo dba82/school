@@ -12,6 +12,13 @@
     "target": "es5",
     "typeRoots": [
       "../node_modules/@types"
+    ],
+    "noResolve": true,
+    "exclude": [
+      "node_modules",
+      "/Users/david_bassler/Desktop/school/node_modules/@types/hammerjs/",
+      "./node_modules",
+      "./typings"
     ]
   }
 }

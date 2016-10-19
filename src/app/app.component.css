@@ -1,0 +1,7 @@
+.active-link /deep/ .md-list-item{
+    background-color: lightgrey;
+}
+/*.active-link-2 *{
+    color: blue;
+}*/
+/*body > app-root > dhb-application-frame > md-sidenav-layout > md-sidenav > div > md-nav-list > a.active-link > md-list-item > div*/

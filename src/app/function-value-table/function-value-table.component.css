@@ -1,0 +1,17 @@
+:host{
+    display:flex;
+    justify-content: center;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+table td{
+    border:1px solid black;
+    text-align:center;
+    padding: 1px;
+}
+td {
+    width: 5vw;
+}

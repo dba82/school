@@ -1,0 +1,34 @@
+<table>
+  <tr *ngFor = "let t of questions; trackBy: index"
+      [ngClass] = "{
+                    correct: show && isCorrect(t),
+                    incorrect: show && isIncorrect(t)
+  }">
+  <td>{{ t.question }}</td>
+  <td>
+    <button md-button
+            (click) = "setAnswer(t, true)"
+            [ngClass] = "{pressed : t.sanswer === true}">
+            Wahr
+    </button>
+  <td>
+    <button md-button
+            (click) = "setAnswer(t)"
+            [ngClass] = "{pressed : !t.sanswer && t.sanswer !== false}">
+            ?
+    </button>  
+  </td>
+  <td>
+    <button md-button
+            (click) = "setAnswer(t, false)"
+            [ngClass] = "{pressed : t.sanswer === false}">
+            Falsch
+    </button>  
+</td>
+  </tr>
+</table>
+
+<p *ngIf="show">
+  {{netto}}/{{questions.length}}                      
+</p>
+<button md-button (click) ="show=!show">Auswertung</button>

@@ -1,0 +1,23 @@
+md-card{
+    border-radius: 1vh;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+    text-align:center;
+    padding:10px;
+    float: left;
+    width: 28vh;
+    height: 28vh;
+    overflow: hidden;
+    margin:5px;
+}
+md-card  *{
+    font-size: 2vh;
+}
+
+/deep/ canvas {
+    width: 26vh;
+    height: 26vh;
+}
