@@ -5,7 +5,7 @@ import { RouterModule }   from '@angular/router';
 import { TrueFalseQuestionsComponent } from '../true-false-questions/true-false-questions.component';
 import { DummyComponent } from '../dummy/dummy.component';
 import { FunctionSetGameComponent } from '../function-set-game/function-set-game.component';
-
+import { NumberlineExerciseComponent } from '../numberline-exercise/numberline-exercise.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,11 +18,11 @@ import { FunctionSetGameComponent } from '../function-set-game/function-set-game
 
       { path: 'ephase/funktionenset', 
         component: FunctionSetGameComponent },
+
+      { path: 'klasse5/zahlenstrahl', 
+        component: NumberlineExerciseComponent },    
     ])
   ],
-  declarations: [
-    TrueFalseQuestionsComponent,
-    DummyComponent
-  ]
+  declarations: [ ]
 })
 export class AppRoutingModule { }

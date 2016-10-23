@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'dhb-dummy',
+  selector: '.dhb-dummy',
   templateUrl: './dummy.component.html',
-  styleUrls: ['./dummy.component.css']
+  styleUrls: ['./dummy.component.css'],
 })
 export class DummyComponent implements OnInit {
 

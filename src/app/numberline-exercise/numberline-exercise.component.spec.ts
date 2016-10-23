@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { ScoreBoardComponent } from './score-board.component';
+import { NumberlineExerciseComponent } from './numberline-exercise.component';
 
-describe('Component: ScoreBoard', () => {
+describe('Component: NumberlineExercise', () => {
   it('should create an instance', () => {
-    let component = new ScoreBoardComponent();
+    let component = new NumberlineExerciseComponent();
     expect(component).toBeTruthy();
   });
 });

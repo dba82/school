@@ -1,0 +1,17 @@
+<form>
+   <div *ngFor = "let item of generator.metaConfig"
+        [ngSwitch] = "item.type">
+   <md-input *ngSwitchCase = "'number'"
+             placeholder="{{item.name}}" 
+             name = "{{item.property}}"
+             [(ngModel)] = "generator.config[item.property]"
+             align="end">
+
+   </md-input> 
+  </div>
+</form>
+
+<button md-raised-button 
+        color = "primary"
+       (click) = "generator.generate()">Eine neue Aufgabe, bitte
+</button>

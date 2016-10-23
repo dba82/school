@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'dhb-function-value-table',
+  selector: '[dhb-function-value-table]',
   templateUrl: './function-value-table.component.html',
   styleUrls: ['./function-value-table.component.css']
 })

@@ -1,5 +1,17 @@
-<svg:g>
-  <svg:line [attr.x1]="0" 
+  <svg:defs>
+    <svg:marker id="arrow" 
+                markerWidth="10" 
+                markerHeight="10" 
+                refx="0" 
+                refy="3" 
+                orient="auto" 
+                markerUnits="userSpaceOnUse">
+      <svg:path d="M0,0 L0,6 L9,3 z" 
+                fill="#f00" />
+    </svg:marker>
+  </svg:defs>  
+<svg:g transform = "translate(10,0)">
+  <svg:line [attr.x1]="-0.5" 
             [attr.y1]="10" 
             [attr.x2]="length" 
             [attr.y2]="10">
@@ -11,6 +23,13 @@
             [attr.y2]="10"
             (click) = "clickedOn(mark)">
   </svg:line>
+  <svg:line *ngFor="let mark of mediumMarks; let ind = index;" 
+            [attr.x1]="mark" 
+            [attr.y1]="6.5" 
+            [attr.x2]="mark" 
+            [attr.y2]="10"
+            (click) = "clickedOn(mark)">
+  </svg:line>
   <svg:line *ngFor="let mark of minorMarks; let ind = index;" 
             [attr.x1]="mark" 
             [attr.y1]="7.5" 
@@ -18,4 +37,28 @@
             [attr.y2]="10"
             (click) = "clickedOn(mark)">
   </svg:line>
+  <svg:g>
+      <svg:line *ngFor = "let range of undirectedRanges"
+                [attr.x1]="getXCoordinateFor(range[0])" 
+                [attr.y1]="12" 
+                [attr.x2]="getXCoordinateFor(range[1])" 
+                [attr.y2]="12">
+      </svg:line>
+  </svg:g>
+  <svg:g>
+    <svg:text *ngFor="let mark of fixedMarks"
+              [attr.x] = "getXCoordinateFor(mark)"
+              [attr.y] = "20"              
+              text-anchor = "middle"
+              font-size = "6pt" >{{mark}}
+    </svg:text>
+  </svg:g>
 </svg:g>
+  <svg:line 
+            [attr.x1]="12" 
+            [attr.y1]="0" 
+            [attr.x2]="12" 
+            [attr.y2]="10"
+            stroke-style="red"
+            [dhb-movable] = "[['x1', 'x2'], ['y1','y2']]">
+  </svg:line>

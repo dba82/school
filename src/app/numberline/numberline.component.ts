@@ -6,29 +6,57 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./numberline.component.css']
 })
 export class NumberlineComponent implements OnInit {
-  @Input() length : number;
-  @Input() start : number;
-  @Input() end : number;
+  @Input() length : number = 500;
+  @Input() start : number = 3;
+  @Input() end : number = 100;
+
+  @Input('major-steps') majorSteps = 10;
+  @Input('medium-steps') mediumSteps = 5;
+  @Input('minor-steps') minorSteps = 1;
+
+  @Input('fixed-marks') fixedMarks = [0, 10, 100];
+  @Input('free-marks') freeMarks = [3, 99];
+
+  @Input('undirected-ranges') undirectedRanges = [];
+  @Input('backward-ranges') backwardRanges;
+  @Input('forward-ranges') forwardRanges;
+
+  private stepSize : number;
+
+  private majorMarks = [];
+  private minorMarks = [];
+  private mediumMarks = [];
   
-  public majorMarks = [];
-  public minorMarks = [];
-  
-  constructor() {  }
+  constructor() { }
 
   ngOnInit() {
-    let step = this.length/(this.end - this.start);
-    for (let i = 0; i < +this.end - +this.start; i += 1){
-      if (i % 5 === 0 && i % 2 === 0) this.majorMarks.push(i*step);
-      else this.minorMarks.push(i*step);
+    this.recalculate();
+  }
+
+  getXCoordinateFor(n) {
+    return (n -  +this.start) * this.stepSize;
+  }
+  
+  recalculate(data?) {
+    if (data) {
+      this.end = data.end;
+      this.start = data.start;
+      this.majorSteps = data.majorSteps;
+      this.mediumSteps = data.mediumSteps;
+      this.minorSteps = data.minorSteps;
+      this.freeMarks = data.freeMarks;
+    }
+    this.stepSize = (+this.length - 0.5)/(+this.end - +this.start);
+    this.majorMarks = [];
+    this.minorMarks = [];
+    this.mediumMarks = [];
+    for (let i = +this.start; i <= +this.end; i += +this.minorSteps){
+      if (i % this.majorSteps === 0) this.majorMarks.push((i -  +this.start) * this.stepSize);
+      else if (i % this.mediumSteps === 0) this.mediumMarks.push((i -  +this.start) * this.stepSize);
+      else this.minorMarks.push((i -  +this.start) * this.stepSize);
     }
   }
-
-  clickedOn(i) {
-    console.log(i);
-    console.log(+this.start + +i);
-  }
-
-  coordinatesFor(n) {
-    
-  }
+  clickedOn(i) { }
 }
+
+let doIntersect = (range1, range2) => range1[1] > range2[0] && range1[0] < range2[1];

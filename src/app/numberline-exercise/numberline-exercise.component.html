@@ -1,0 +1,17 @@
+<dhb-configuration-panel 
+      [generator] = "generator">
+</dhb-configuration-panel>
+
+<div [hidden] = "!generator.ran">
+  <svg width = "540" >
+    <g #nl 
+       dhb-numberline
+      [start] = "generator.taskParameters.start"
+      [end] = "generator.taskParameters.end"  
+      [major-steps] = "generator.taskParameters.majorSteps"
+      [medium-steps] = "generator.taskParameters.mediumSteps"
+      [minor-steps] = "generator.taskParameters.minorSteps"
+      [fixed-marks] = "generator.taskParameters.fixedMarks">    
+    </g>
+  </svg>
+</div>

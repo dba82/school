@@ -8,10 +8,10 @@
     {{f.f.text}}
   </p>
   
-  <dhb-function-value-table *ngSwitchCase = "1"
+  <div dhb-function-value-table *ngSwitchCase = "1"
               [f] = "f.f" 
               [numbers] = "[-3, -1, 0, 1, 3]">
-  </dhb-function-value-table>
+  </div>
   
   <dhb-function-plot *ngSwitchCase = "3"
                  [f] = "f.f.fnc"
