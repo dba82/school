@@ -1,10 +1,9 @@
-import { Component, OnInit, AfterViewInit, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 class ExerciseGenerator {
   public config = { };
   public taskParameters = {};
   public ran = false;
-  public didRun = new EventEmitter();
   private historyOfTaskParameters = [];
   
   constructor(public metaConfig, private createTaskParameters) { }
@@ -13,7 +12,6 @@ class ExerciseGenerator {
     this.taskParameters = this.createTaskParameters(this.config);
     this.historyOfTaskParameters.push(this.taskParameters);
     this.ran = true;
-    this.didRun.emit(this.taskParameters);
   }
 }
 
@@ -22,8 +20,7 @@ class ExerciseGenerator {
   templateUrl: './numberline-exercise.component.html',
   styleUrls: ['./numberline-exercise.component.css']
 })
-export class NumberlineExerciseComponent implements OnInit, AfterViewInit {
-  @ViewChild('nl') nl;
+export class NumberlineExerciseComponent implements OnInit {
 
   private generator = new ExerciseGenerator([
       {
@@ -52,7 +49,7 @@ export class NumberlineExerciseComponent implements OnInit, AfterViewInit {
         type: 'number'
       }
     ], function(config){ 
-        let result = {
+        let result = { /*result is an "empty" copy of a taskParameters-object*/
           start: undefined,
           end: undefined,
           majorSteps: undefined,
@@ -81,13 +78,6 @@ export class NumberlineExerciseComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit(){
-    this.generator.didRun.subscribe((params) => {
-      this.nl.recalculate(params);
-    })
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -16,7 +16,6 @@ import { FunctionSetCardComponent } from './function-set-card/function-set-card.
 import { FunctionValueTableComponent } from './function-value-table/function-value-table.component';
 import { FunctionDescriptionComponent } from './function-description/function-description.component';
 import { KhanTexSpanComponent } from './khan-tex-span/khan-tex-span.component';
-import { NumberLineMarkComponent } from './number-line-mark/number-line-mark.component';
 import { TrueFalseQuestionsComponent } from './true-false-questions/true-false-questions.component';
 import { NumberlineComponent } from './numberline/numberline.component';
 import { ConfigurationPanelComponent } from './configuration-panel/configuration-panel.component';
@@ -36,7 +35,6 @@ import { MovableDirective } from './movable.directive';
     FunctionDescriptionComponent,
     KhanTexSpanComponent,
     NumberlineComponent,
-    NumberLineMarkComponent,
     TrueFalseQuestionsComponent,
     ConfigurationPanelComponent,
     NumberlineExerciseComponent,

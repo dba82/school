@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: '[dhb-numberline]',
   templateUrl: './numberline.component.html',
   styleUrls: ['./numberline.component.css']
 })
-export class NumberlineComponent implements OnInit {
+export class NumberlineComponent implements OnInit, OnChanges {
   @Input() length : number = 500;
   @Input() start : number = 3;
   @Input() end : number = 100;
@@ -29,6 +29,10 @@ export class NumberlineComponent implements OnInit {
   
   constructor() { }
 
+  ngOnChanges() {
+    this.recalculate();
+  }
+
   ngOnInit() {
     this.recalculate();
   }
@@ -39,12 +43,12 @@ export class NumberlineComponent implements OnInit {
   
   recalculate(data?) {
     if (data) {
-      this.end = data.end;
-      this.start = data.start;
-      this.majorSteps = data.majorSteps;
-      this.mediumSteps = data.mediumSteps;
-      this.minorSteps = data.minorSteps;
-      this.freeMarks = data.freeMarks;
+      this.end = data.end || this.end;
+      this.start = data.start || this.start;
+      this.majorSteps = data.majorSteps || this.majorSteps;
+      this.mediumSteps = data.mediumSteps || this.mediumSteps;
+      this.minorSteps = data.minorSteps || this.minorSteps;
+      this.freeMarks = data.freeMarks || this.freeMarks;
     }
     this.stepSize = (+this.length - 0.5)/(+this.end - +this.start);
     this.majorMarks = [];
