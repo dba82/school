@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Component, OnChanges, ElementRef, Input } from '@angular/core';
 
 declare var katex: any;
 
@@ -8,13 +8,12 @@ declare var katex: any;
   styleUrls: ['./khan-tex-span.component.css']
 })
 
-export class KhanTexSpanComponent implements OnInit {
+export class KhanTexSpanComponent implements OnChanges {
   @Input() expression;
 
   constructor(private myElement : ElementRef) { }
 
-  ngOnInit() {
+  ngOnChanges() {
     katex.render(this.expression, this.myElement.nativeElement)
   }
-
 }

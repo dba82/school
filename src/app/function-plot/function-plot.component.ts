@@ -7,9 +7,9 @@ let drawPolyline = (canvas, ctx, points, strokeOrFill = 'stroke', style?) =>{
    for (let point of points.slice(1)) ctx.lineTo(point[0], point[1]);
    ctx[strokeOrFill]();
 }
-let drawYAxis = (canvas, ctx, x, style) => drawPolyline(canvas, ctx, [[x, 5], [x, canvas.height]], 'stroke', style);
+let drawVertical = (canvas, ctx, x, style) => drawPolyline(canvas, ctx, [[x, 5], [x, canvas.height]], 'stroke', style);
 
-let drawXAxis = (canvas, ctx, y, style) => drawPolyline(canvas, ctx,[[0, y], [canvas.width-5, y]], 'stroke', style);
+let drawHorizontal = (canvas, ctx, y, style) => drawPolyline(canvas, ctx,[[0, y], [canvas.width-5, y]], 'stroke', style);
 
 let drawXAxisTriangle = (canvas, ctx, xAxisHeight, style) => {
   drawPolyline(canvas, ctx, [
@@ -82,9 +82,22 @@ let calculatePlotParameters = (canvas, ctx, fnc, xRange, yrange, xrangeexception
   }
 }
 
+let drawSquareGrid = (style : any = {fillStyle : 'grey', strokeStyle : 'grey', lineWidth: 5}) => {
+
+}
+
+let drawYAxisTicks = (params, style : any = {fillStyle : 'grey', strokeStyle : 'grey', lineWidth: 5}) => {
+    let yPosOfXAxis = params.canvas.height-(params.canvas.height*params.yAxisRatio);
+    /* ...........*/
+    drawPolyline(params.canvas, params.ctx, [], 'stroke', style);
+}
+
+let drawXAxisTicks = (style : any = {fillStyle : 'grey', strokeStyle : 'grey', lineWidth: 5}) => {
+  
+}
 let drawAxes = (params, style : any = {fillStyle : 'grey', strokeStyle : 'grey', lineWidth: 5} ) => {
-  drawYAxis(params.canvas, params.ctx, params.canvas.width*params.xAxisRatio, style);
-  drawXAxis(params.canvas,params.ctx, params.canvas.height-(params.canvas.height*params.yAxisRatio), style);
+  drawVertical(params.canvas, params.ctx, params.canvas.width*params.xAxisRatio, style);
+  drawHorizontal(params.canvas,params.ctx, params.canvas.height-(params.canvas.height*params.yAxisRatio), style);
   drawXAxisTriangle(params.canvas, params.ctx, params.canvas.height-(params.canvas.height*params.yAxisRatio), style);
   drawYAxisTriangle(params.canvas, params.ctx, params.canvas.width*params.xAxisRatio, style);
 }

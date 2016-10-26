@@ -21,7 +21,11 @@ import { NumberlineComponent } from './numberline/numberline.component';
 import { ConfigurationPanelComponent } from './configuration-panel/configuration-panel.component';
 import { NumberlineExerciseComponent } from './numberline-exercise/numberline-exercise.component';
 import { NumeralsPipe } from './numerals.pipe';
-import { MovableDirective } from './movable.directive';
+import { MovableDirective } from './movable/movable.directive';
+import { MovablesStageDirective } from './movables-stage/movables-stage.directive';
+import { FormattedTextInputComponent } from './formatted-text-input/formatted-text-input.component';
+
+import { MouseCoordinatesService } from './mouse-coordinates.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { MovableDirective } from './movable.directive';
     ConfigurationPanelComponent,
     NumberlineExerciseComponent,
     NumeralsPipe,
-    MovableDirective
+    MovableDirective,
+    MovablesStageDirective,
+    FormattedTextInputComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { MovableDirective } from './movable.directive';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    MouseCoordinatesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

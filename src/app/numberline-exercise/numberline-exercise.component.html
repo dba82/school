@@ -3,9 +3,10 @@
 </dhb-configuration-panel>
 
 <div [hidden] = "!generator.ran">
-  <svg width = "540" >
+  <svg width = "540"  >
     <g
-       dhb-numberline
+      dhb-numberline
+      dhb-movables-stage
       [start] = "generator.taskParameters.start"
       [end] = "generator.taskParameters.end"  
       [major-steps] = "generator.taskParameters.majorSteps"
