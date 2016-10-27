@@ -22,10 +22,8 @@ import { ConfigurationPanelComponent } from './configuration-panel/configuration
 import { NumberlineExerciseComponent } from './numberline-exercise/numberline-exercise.component';
 import { NumeralsPipe } from './numerals.pipe';
 import { MovableDirective } from './movable/movable.directive';
-import { MovablesStageDirective } from './movables-stage/movables-stage.directive';
 import { FormattedTextInputComponent } from './formatted-text-input/formatted-text-input.component';
 
-import { MouseCoordinatesService } from './mouse-coordinates.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +42,6 @@ import { MouseCoordinatesService } from './mouse-coordinates.service';
     NumberlineExerciseComponent,
     NumeralsPipe,
     MovableDirective,
-    MovablesStageDirective,
     FormattedTextInputComponent
   ],
   imports: [
@@ -55,9 +52,7 @@ import { MouseCoordinatesService } from './mouse-coordinates.service';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [
-    MouseCoordinatesService
-  ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
