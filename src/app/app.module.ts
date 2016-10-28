@@ -23,6 +23,7 @@ import { NumberlineExerciseComponent } from './numberline-exercise/numberline-ex
 import { NumeralsPipe } from './numerals.pipe';
 import { MovableDirective } from './movable/movable.directive';
 import { FormattedTextInputComponent } from './formatted-text-input/formatted-text-input.component';
+import { TextFileDownloaderComponent } from './text-file-downloader/text-file-downloader.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FormattedTextInputComponent } from './formatted-text-input/formatted-te
     NumberlineExerciseComponent,
     NumeralsPipe,
     MovableDirective,
-    FormattedTextInputComponent
+    FormattedTextInputComponent,
+    TextFileDownloaderComponent
   ],
   imports: [
     BrowserModule,

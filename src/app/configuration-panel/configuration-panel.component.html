@@ -6,8 +6,16 @@
              name = "{{item.property}}"
              [(ngModel)] = "generator.config[item.property]"
              align="end">
-
    </md-input> 
+   <div *ngSwitchCase = "'select-multiple'">
+     <h1>{{item.name}}</h1>
+      <md-checkbox *ngFor = "let option of item.options; let i = index;"
+                  [(ngModel)] = "generator.config[item.property][option.name]"
+                  [disabled] = "option.disabled">
+                   {{option.name}} 
+      </md-checkbox>
+   </div>
+
   </div>
 </form>
 

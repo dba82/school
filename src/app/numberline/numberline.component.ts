@@ -29,6 +29,7 @@ export class NumberlineComponent implements OnInit, OnChanges {
   
   constructor() { }
 
+  FORTESTONLY(e){ console.log(e)}
   ngOnChanges() {
     this.recalculate();
   }

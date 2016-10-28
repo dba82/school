@@ -12,26 +12,34 @@
     </svg:marker>
   </svg:defs>  
 <svg:g transform = "translate(10,0)">
-  <svg:line [attr.x1]="-0.5" 
+  <svg:line 
+            class = "mark"
+            [attr.x1]="-0.5" 
             [attr.y1]="10" 
             [attr.x2]="length" 
             [attr.y2]="10">
   </svg:line>
-  <svg:line *ngFor="let mark of majorMarks; let ind = index;" 
+  <svg:line
+            class = "mark"
+             *ngFor="let mark of majorMarks; let ind = index;" 
             [attr.x1]="mark" 
             [attr.y1]="5" 
             [attr.x2]="mark" 
             [attr.y2]="10"
             (click) = "clickedOn(mark)">
   </svg:line>
-  <svg:line *ngFor="let mark of mediumMarks; let ind = index;" 
+  <svg:line
+            class = "mark"
+             *ngFor="let mark of mediumMarks; let ind = index;" 
             [attr.x1]="mark" 
             [attr.y1]="6.5" 
             [attr.x2]="mark" 
             [attr.y2]="10"
             (click) = "clickedOn(mark)">
   </svg:line>
-  <svg:line *ngFor="let mark of minorMarks; let ind = index;" 
+  <svg:line
+            class = "mark"
+             *ngFor="let mark of minorMarks; let ind = index;" 
             [attr.x1]="mark" 
             [attr.y1]="7.5" 
             [attr.x2]="mark" 
@@ -55,15 +63,31 @@
     </svg:text>
   </svg:g>
 </svg:g>
+
+  <!--<svg:line 
+            dhb-movable
+            move-with-x = "x1, x2"
+            [max-x] = "getXCoordinateFor(end) + 10"
+            [min-x] = "10"
+            (move) = "FORTESTONLY($event - 10)"
+            x1="12" 
+            y1="0" 
+            x2="12" 
+            y2="10"
+            stroke = "white"
+            stroke-width = "4">
+  </svg:line>-->
   <svg:line 
             dhb-movable
             move-with-x = "x1, x2"
             [max-x] = "getXCoordinateFor(end) + 10"
             [min-x] = "10"
+            (move) = "FORTESTONLY($event - 10)"
             x1="12" 
             y1="0" 
             x2="12" 
             y2="10"
-            stroke = "red">
-  </svg:line>
+            stroke = "red"
+            stroke-width = "1">
+  </svg:line>-->
 <svg:g>

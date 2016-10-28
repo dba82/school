@@ -28,7 +28,7 @@ export class MovableDirective implements OnInit {
     })
   }
 
-  @HostListener('click', ['$event'])
+  @HostListener('mousedown', ['$event'])
   initiateMovement(e) {
     this.anchor = {
       element: this.moveWith.map( a => {
@@ -62,7 +62,6 @@ export class MovableDirective implements OnInit {
             let matrix = this.el.nativeElement.ownerSVGElement.getScreenCTM();
             matrix = matrix.inverse();
             point = point.matrixTransform(matrix);
-            console.log(newV, point[xOrY.toLowerCase()])
             newV = point[xOrY.toLowerCase()];
           }
           newV = +b - newV;
