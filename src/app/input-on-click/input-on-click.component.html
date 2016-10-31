@@ -1,0 +1,6 @@
+<div [ngSwitch] = "edit">
+  <div class= "no-edit" *ngSwitchCase="false" (click) = "edit = true">{{object[key]}}</div>
+  <div class= "edit" *ngSwitchCase="true">
+    <input (blur) = "edit = false" type="text" [(ngModel)] = "object[key]">
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.no-edit{
+    width: 100%;
+}
+
+.edit{
+    width: 100%;
+}
+
+.edit > input{
+    width: 100%;
+}

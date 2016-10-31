@@ -24,6 +24,10 @@ import { NumeralsPipe } from './numerals.pipe';
 import { MovableDirective } from './movable/movable.directive';
 import { FormattedTextInputComponent } from './formatted-text-input/formatted-text-input.component';
 import { TextFileDownloaderComponent } from './text-file-downloader/text-file-downloader.component';
+import { JsonTreeComponent } from './json-tree/json-tree.component';
+import { KeysPipe } from './keys.pipe';
+import { JsonTreeNodeComponent } from './json-tree-node/json-tree-node.component';
+import { InputOnClickComponent } from './input-on-click/input-on-click.component';
 
 
 @NgModule({
@@ -44,7 +48,11 @@ import { TextFileDownloaderComponent } from './text-file-downloader/text-file-do
     NumeralsPipe,
     MovableDirective,
     FormattedTextInputComponent,
-    TextFileDownloaderComponent
+    TextFileDownloaderComponent,
+    JsonTreeComponent,
+    KeysPipe,
+    JsonTreeNodeComponent,
+    InputOnClickComponent
   ],
   imports: [
     BrowserModule,

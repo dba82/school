@@ -1,11 +1,11 @@
 <svg width="300" height="100">
  <g transform = "translate(10, 0)" dhb-numberline length="200"></g>
 </svg>
-<input
-    [(ngModel)] = "fuck"/>
 
  <dhb-text-file-downloader
-    [file-content] = "fuck"
+    [file-content] = "test"
     file-ending = "json"
 > Download our Hello-Object
 </dhb-text-file-downloader>
+
+<dhb-json-tree [object]="questions.questions"></dhb-json-tree>

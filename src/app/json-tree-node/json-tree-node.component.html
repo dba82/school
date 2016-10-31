@@ -1,0 +1,34 @@
+<div 
+  [ngClass] = "{
+    column: type(object[key]) === 'object' || type(object[key]) === 'array', 
+    row: type(object[key]) !== 'object' && type(object[key]) !== 'array'
+  }">
+  
+  <div 
+    (click) = "collapsed = !collapsed;"
+    class = "key">
+    {{key}}
+  </div >
+  
+  <div [ngSwitch] = "type(object[key])"
+        class="value">
+    <div *ngSwitchCase = "'string'">
+      <dhb-input-on-click [object] = "object" [key] = "key"></dhb-input-on-click>
+    </div>
+    <div *ngSwitchCase = "'boolean'">
+      <dhb-input-on-click [object] = "object" [key] = "key"></dhb-input-on-click>
+    </div>
+    <div *ngSwitchCase = "'number'">
+      <dhb-input-on-click [object] = "object" [key] = "key"></dhb-input-on-click>
+    </div>
+
+    <div *ngIf = "collapsed === false">
+      <div *ngSwitchCase = "'object'">
+        <dhb-json-tree [object] = "object[key]"></dhb-json-tree>
+      </div>
+      <div *ngSwitchCase = "'array'">
+        <dhb-json-tree [object] = "object[key]"></dhb-json-tree>
+      </div>
+    </div>
+  </div>
+</div>
